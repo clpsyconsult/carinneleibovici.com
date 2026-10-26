@@ -12,6 +12,7 @@ SITE = "https://www.carinneleibovici.com"
 EMAIL = "carinne.leibovici@icloud.com"
 WHATSAPP = "+33 6 24 90 33 25"
 WA_LINK = "https://wa.me/33624903325"
+CAL = "https://cal.com/carinne-leibovici-psy"
 FB = "https://www.facebook.com/carinnepsychologue/"
 IG = "https://www.instagram.com/carinne.leibovici/"
 YT = "https://www.youtube.com/channel/UCy7ONifkKb8_cWLWgjub7Mg"
@@ -139,7 +140,7 @@ def page(filename, title, description, body, current=None):
     <nav class="nav" id="nav" aria-label="{t("Navigation principale", "Main navigation")}">
 {links}
 <a class="lang" href="{other_href}" hreflang="{other_lang}" lang="{other_lang}" title="{t("English version", "Version française")}">{other_label}</a>
-<a class="btn" href="contact.html">{t("Prendre rendez-vous", "Book a session")}</a>
+<a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a>
     </nav>
   </div>
 </header>
@@ -198,11 +199,11 @@ def page(filename, title, description, body, current=None):
 
 def cta(title=None, text=None):
     title = title or t("Faire le premier pas", "Take the first step")
-    text = text or t("Écrivez-moi quelques lignes sur ce qui vous amène. Je vous réponds pour fixer un premier rendez-vous en ligne.",
-                     "Write me a few lines about what brings you here. I will reply to arrange a first online session.")
+    text = text or t("Réservez directement votre première séance en ligne, ou écrivez-moi quelques lignes si vous avez une question avant de commencer.",
+                     "Book your first online session directly, or write me a few lines if you have a question before starting.")
     return f"""<section class="cta"><div class="wrap">
   <div style="display:grid;gap:12px"><h2>{title}</h2><p style="max-width:46ch">{text}</p></div>
-  <a class="btn" href="contact.html">{t("Prendre rendez-vous", "Book a session")}</a>
+  <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="contact.html#formulaire">{t("Me contacter", "Contact me")}</a></div>
 </div></section>"""
 
 
@@ -261,7 +262,7 @@ def build():
     <p class="eyebrow">{t("Psychologue clinicienne · Séances en ligne", "Clinical psychologist · Online sessions")}</p>
     <h1>{t("Un espace pour comprendre ce qui vous pèse, <em>où que vous soyez.</em>", "A space to understand what weighs on you, <em>wherever you are.</em>")}</h1>
     <p class="lead">{t("Thérapie individuelle, de couple et familiale, uniquement en ligne, en français ou en anglais.", "Individual, couples and family therapy, online only, in French or English.")}</p>
-    <div class="actions"><a class="btn" href="contact.html">{t("Prendre rendez-vous", "Book a session")}</a><a class="btn ghost" href="therapies.html">{t("Découvrir les thérapies", "Explore the therapies")}</a></div>
+    <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="therapies.html">{t("Découvrir les thérapies", "Explore the therapies")}</a></div>
     <ul class="facts"><li>{t("Plus de 15 ans d'expérience", "Over 15 years of experience")}</li><li>{t("TCC, psychodynamique, systémique", "CBT, psychodynamic, systemic")}</li><li>{t("Séances de 50 min à 1 h 30", "Sessions of 50 min to 1 h 30")}</li></ul>
   </div>
   <div class="hero-photo"><img src="{"" if LANG == "fr" else "../"}assets/accueil.jpg" alt="{t("Une patiente chez elle, en séance de thérapie en ligne avec sa psychologue sur un ordinateur portable", "A client at home in an online therapy session with her psychologist on a laptop")}" width="1536" height="1024"></div>
@@ -593,8 +594,15 @@ def build():
          t("Prendre rendez-vous en ligne avec Carinne Leibovici, psychologue clinicienne : contact par e-mail, horaires.",
            "Book an online session with Carinne Leibovici, clinical psychologist: email contact and hours."),
          f"""
-{head(t("Rendez-vous", "Book"), t("Prendre rendez-vous", "Book a session"), t("Toutes les séances ont lieu en ligne. Écrivez-moi pour convenir d'un premier rendez-vous.", "All sessions take place online. Write to me to arrange a first appointment."))}
-<section style="padding-top:0"><div class="wrap split">
+{head(t("Rendez-vous", "Book"), t("Prendre rendez-vous", "Book a session"), t("Toutes les séances ont lieu en ligne. Réservez directement votre créneau, ou écrivez-moi si vous avez une question.", "All sessions take place online. Book your slot directly, or write to me if you have a question."))}
+<section style="padding-top:0"><div class="wrap">
+  <div class="contact-card" style="margin-bottom:28px">
+    <p class="eyebrow">{t("Réservation en ligne", "Online booking")}</p>
+    <h2>{t("Choisissez votre créneau", "Choose your time slot")}</h2>
+    <p class="muted" style="max-width:60ch">{t("Réservez directement une séance de 50 minutes dans mon agenda. Le règlement se fait en ligne au moment de la réservation, et vous recevez aussitôt la confirmation et le lien de la séance vidéo.", "Book a 50-minute session directly in my calendar. Payment is made online when you book, and you immediately receive the confirmation and the video session link.")}</p>
+    <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="#formulaire">{t("Une question avant de réserver ?", "A question before booking?")}</a></div>
+  </div>
+</div><div class="wrap split">
   <div class="contact-card">
     <p class="eyebrow">{t("Écrivez-moi", "Write to me")}</p>
     <a class="email" href="mailto:{EMAIL}">{EMAIL}</a>
@@ -623,7 +631,7 @@ def build():
       <dl class="dl">
         <div><dt>{t("Durée", "Length")}</dt><dd>50 min</dd></div>
         <div><dt>{t("Tarif", "Fee")}</dt><dd>{t("Sur demande", "On request")}</dd></div>
-        <div><dt>{t("Paiement", "Payment")}</dt><dd>{t("Virement bancaire, Wise, Wero, Revolut ou PayPal", "Bank transfer, Wise, Wero, Revolut or PayPal")}</dd></div>
+        <div><dt>{t("Paiement", "Payment")}</dt><dd>{t("En ligne, au moment de la réservation. Pour les séances suivantes : virement bancaire, Wise, Wero, Revolut ou PayPal", "Online, when you book. For follow-up sessions: bank transfer, Wise, Wero, Revolut or PayPal")}</dd></div>
       </dl>
       <p class="muted">{t("Toutes les séances ont lieu en ligne, par vidéo ou par téléphone.", "All sessions take place online, by video or phone.")}</p>
     </div>
