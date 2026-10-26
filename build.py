@@ -263,7 +263,7 @@ def build():
     <h1>{t("Un espace pour comprendre ce qui vous pèse, <em>où que vous soyez.</em>", "A space to understand what weighs on you, <em>wherever you are.</em>")}</h1>
     <p class="lead">{t("Thérapie individuelle, de couple et familiale, uniquement en ligne, en français ou en anglais.", "Individual, couples and family therapy, online only, in French or English.")}</p>
     <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="therapies.html">{t("Découvrir les thérapies", "Explore the therapies")}</a></div>
-    <ul class="facts"><li>{t("Plus de 15 ans d'expérience", "Over 15 years of experience")}</li><li>{t("TCC, psychodynamique, systémique", "CBT, psychodynamic, systemic")}</li><li>{t("Séances de 50 min à 1 h 30", "Sessions of 50 min to 1 h 30")}</li></ul>
+    <ul class="facts"><li>{t("Plus de 15 ans d'expérience", "Over 15 years of experience")}</li><li>{t("TCC, psychodynamique, systémique", "CBT, psychodynamic, systemic")}</li><li>{t("Séances de 30 min à 1 h 30", "Sessions of 30 min to 1 h 30")}</li></ul>
   </div>
   <div class="hero-photo"><img src="{"" if LANG == "fr" else "../"}assets/accueil.jpg" alt="{t("Une patiente chez elle, en séance de thérapie en ligne avec sa psychologue sur un ordinateur portable", "A client at home in an online therapy session with her psychologist on a laptop")}" width="1536" height="1024"></div>
 </div></section>
@@ -371,7 +371,7 @@ def build():
 <section class="band"><div class="wrap">
   <div class="section-head"><p class="eyebrow">{t("Le cadre", "The setting")}</p><h2>{t("Repères pratiques", "Practical details")}</h2></div>
   <dl class="dl">
-    <div><dt>{t("Durée d'une séance", "Session length")}</dt><dd>{t("50 min à 1 h 30", "50 min to 1 h 30")}</dd></div>
+    <div><dt>{t("Durée d'une séance", "Session length")}</dt><dd>{t("30 min à 1 h 30", "30 min to 1 h 30")}</dd></div>
     <div><dt>{t("Fréquence", "Frequency")}</dt><dd>{t("Définie ensemble", "Agreed together")}</dd></div>
     <div><dt>{t("Lieu", "Where")}</dt><dd>{t("En ligne uniquement", "Online only")}</dd></div>
     <div><dt>{t("Langues", "Languages")}</dt><dd>{t("Français, anglais", "French, English")}</dd></div>
@@ -498,15 +498,15 @@ def build():
     ]
     page("therapie-en-ligne.html",
          t("Thérapie en ligne · Carinne Leibovici", "Online therapy · Carinne Leibovici"),
-         t("Toutes les séances ont lieu en ligne : Zoom, Teams, FaceTime, WhatsApp ou téléphone, de 50 min à 1 h 30, en français ou en anglais.",
-           "All sessions are online: Zoom, Teams, FaceTime, WhatsApp or phone, 50 min to 1 h 30, in French or English."),
+         t("Toutes les séances ont lieu en ligne : Zoom, Teams, FaceTime, WhatsApp ou téléphone, de 30 min à 1 h 30, en français ou en anglais.",
+           "All sessions are online: Zoom, Teams, FaceTime, WhatsApp or phone, 30 min to 1 h 30, in French or English."),
          f"""
 {head(sub_crumb(t("En ligne", "Online")), t("Thérapie en ligne", "Online therapy"), t("Toutes mes séances ont lieu en ligne, par vidéo ou par téléphone. Où que vous viviez, le lieu n'est plus une contrainte.", "All my sessions take place online, by video or phone. Wherever you live, location is no longer a barrier."))}
 <section style="padding-top:0"><div class="wrap" style="display:grid;gap:40px">
   <div class="hero-photo" style="aspect-ratio:1536/1024"><img src="{"" if LANG == "fr" else "../"}assets/therapie-en-ligne.jpg" alt="{t("Un patient en séance de thérapie en ligne avec sa psychologue, par visioconférence", "A client in an online therapy session with his psychologist by video call")}" width="1536" height="1024" loading="lazy"></div>
   <dl class="dl">
     <div><dt>{t("Outils", "Tools")}</dt><dd>{t("Zoom, Skype, Teams, FaceTime, WhatsApp, téléphone", "Zoom, Skype, Teams, FaceTime, WhatsApp, phone")}</dd></div>
-    <div><dt>{t("Durée", "Length")}</dt><dd>{t("50 min à 1 h 30", "50 min to 1 h 30")}</dd></div>
+    <div><dt>{t("Durée", "Length")}</dt><dd>{t("30 min à 1 h 30", "30 min to 1 h 30")}</dd></div>
     <div><dt>{t("Paiement", "Payment")}</dt><dd>{t("À l'avance : virement, Wise, Wero, Revolut ou PayPal", "In advance: bank transfer, Wise, Wero, Revolut or PayPal")}</dd></div>
     <div><dt>{t("Annulation", "Cancellation")}</dt><dd>{t("Remboursement si 48 h avant", "Refund if 48 h ahead")}</dd></div>
   </dl>
@@ -553,7 +553,7 @@ def build():
         (t("Quelle est la différence entre un psychologue et un psychiatre ?", "What is the difference between a psychologist and a psychiatrist?"),
          t("Le psychologue accompagne par la parole et la thérapie. Le psychiatre est médecin et peut prescrire des médicaments. Les deux travaillent parfois ensemble.", "A psychologist helps through talking and therapy. A psychiatrist is a medical doctor and can prescribe medication. They sometimes work together.")),
         (t("Combien de temps dure une séance ?", "How long is a session?"),
-         t("En général entre 50 minutes et 1 h 30, selon le type de thérapie et vos besoins.", "Usually between 50 minutes and 1 h 30, depending on the type of therapy and your needs.")),
+         t("Entre 30 minutes et 1 h 30, selon le type de thérapie et vos besoins.", "Between 30 minutes and 1 h 30, depending on the type of therapy and your needs.")),
         (t("À quelle fréquence dois-je consulter ?", "How often should I come?"),
          t("Nous fixons le rythme ensemble lors de la première séance. Certaines personnes consultent chaque semaine, d'autres espacent davantage.", "We agree on the rhythm at the first session. Some people come weekly, others less often.")),
         (t("Les consultations sont-elles confidentielles ?", "Are sessions confidential?"),
@@ -599,7 +599,7 @@ def build():
   <div class="contact-card" style="margin-bottom:28px">
     <p class="eyebrow">{t("Réservation en ligne", "Online booking")}</p>
     <h2>{t("Choisissez votre créneau", "Choose your time slot")}</h2>
-    <p class="muted" style="max-width:60ch">{t("Réservez directement une séance de 50 minutes dans mon agenda. Je vous envoie ensuite par WhatsApp le lien de paiement : le rendez-vous est confirmé dès réception du règlement.", "Book a 50-minute session directly in my calendar. I will then send you the payment link on WhatsApp: the session is confirmed once payment is received.")}</p>
+    <p class="muted" style="max-width:60ch">{t("Réservez directement une séance de 30 ou 50 minutes dans mon agenda. Je vous envoie ensuite par WhatsApp le lien de paiement : le rendez-vous est confirmé dès réception du règlement.", "Book a 30- or 50-minute session directly in my calendar. I will then send you the payment link on WhatsApp: the session is confirmed once payment is received.")}</p>
     <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="#formulaire">{t("Une question avant de réserver ?", "A question before booking?")}</a></div>
   </div>
 </div><div class="wrap split">
@@ -629,7 +629,7 @@ def build():
     <div class="prose">
       <h2>{t("Séance en ligne", "Online session")}</h2>
       <dl class="dl">
-        <div><dt>{t("Durée", "Length")}</dt><dd>50 min</dd></div>
+        <div><dt>{t("Durée", "Length")}</dt><dd>{t("30 ou 50 min", "30 or 50 min")}</dd></div>
         <div><dt>{t("Tarif", "Fee")}</dt><dd>{t("Sur demande", "On request")}</dd></div>
         <div><dt>{t("Paiement", "Payment")}</dt><dd>{t("Virement bancaire, Wise, Wero, Revolut ou PayPal. Le lien de paiement vous est envoyé par WhatsApp après la réservation ; le paiement confirme le rendez-vous.", "Bank transfer, Wise, Wero, Revolut or PayPal. The payment link is sent to you on WhatsApp after booking; payment confirms the session.")}</dd></div>
       </dl>
