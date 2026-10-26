@@ -599,7 +599,7 @@ def build():
   <div class="contact-card" style="margin-bottom:28px">
     <p class="eyebrow">{t("Réservation en ligne", "Online booking")}</p>
     <h2>{t("Choisissez votre créneau", "Choose your time slot")}</h2>
-    <p class="muted" style="max-width:60ch">{t("Réservez directement une séance de 50 minutes dans mon agenda. Le règlement se fait en ligne au moment de la réservation, et vous recevez aussitôt la confirmation et le lien de la séance vidéo.", "Book a 50-minute session directly in my calendar. Payment is made online when you book, and you immediately receive the confirmation and the video session link.")}</p>
+    <p class="muted" style="max-width:60ch">{t("Réservez directement une séance de 50 minutes dans mon agenda. Je vous envoie ensuite par WhatsApp le lien de paiement : le rendez-vous est confirmé dès réception du règlement.", "Book a 50-minute session directly in my calendar. I will then send you the payment link on WhatsApp: the session is confirmed once payment is received.")}</p>
     <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="#formulaire">{t("Une question avant de réserver ?", "A question before booking?")}</a></div>
   </div>
 </div><div class="wrap split">
@@ -631,7 +631,7 @@ def build():
       <dl class="dl">
         <div><dt>{t("Durée", "Length")}</dt><dd>50 min</dd></div>
         <div><dt>{t("Tarif", "Fee")}</dt><dd>{t("Sur demande", "On request")}</dd></div>
-        <div><dt>{t("Paiement", "Payment")}</dt><dd>{t("En ligne, au moment de la réservation. Pour les séances suivantes : virement bancaire, Wise, Wero, Revolut ou PayPal", "Online, when you book. For follow-up sessions: bank transfer, Wise, Wero, Revolut or PayPal")}</dd></div>
+        <div><dt>{t("Paiement", "Payment")}</dt><dd>{t("Virement bancaire, Wise, Wero, Revolut ou PayPal. Le lien de paiement vous est envoyé par WhatsApp après la réservation ; le paiement confirme le rendez-vous.", "Bank transfer, Wise, Wero, Revolut or PayPal. The payment link is sent to you on WhatsApp after booking; payment confirms the session.")}</dd></div>
       </dl>
       <p class="muted">{t("Toutes les séances ont lieu en ligne, par vidéo ou par téléphone.", "All sessions take place online, by video or phone.")}</p>
     </div>
