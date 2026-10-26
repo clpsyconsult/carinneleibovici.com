@@ -260,7 +260,7 @@ def build():
 <section class="hero"><div class="wrap">
   <div class="hero-text">
     <p class="eyebrow">{t("Psychologue clinicienne · Séances en ligne", "Clinical psychologist · Online sessions")}</p>
-    <h1>{t("Un espace pour comprendre ce qui vous pèse, <em>où que vous soyez.</em>", "A space to understand what weighs on you, <em>wherever you are.</em>")}</h1>
+    <h1>{t("Un espace pour exprimer vos difficultés, comprendre vos besoins, <em>où que vous soyez.</em>", "A space to express your difficulties and understand your needs, <em>wherever you are.</em>")}</h1>
     <p class="lead">{t("Thérapie individuelle, de couple et familiale, uniquement en ligne, en français ou en anglais.", "Individual, couples and family therapy, online only, in French or English.")}</p>
     <div class="actions"><a class="btn" href="{CAL}" rel="noopener">{t("Réserver une séance", "Book a session")}</a><a class="btn ghost" href="therapies.html">{t("Découvrir les thérapies", "Explore the therapies")}</a></div>
     <ul class="facts"><li>{t("Plus de 15 ans d'expérience", "Over 15 years of experience")}</li><li>{t("TCC, psychodynamique, systémique", "CBT, psychodynamic, systemic")}</li><li>{t("Séances de 30 min à 1 h 30", "Sessions of 30 min to 1 h 30")}</li></ul>
