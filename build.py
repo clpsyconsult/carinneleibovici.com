@@ -606,7 +606,7 @@ def build():
       <img src="{"" if LANG == "fr" else "../"}assets/whatsapp-qr.png" alt="{t("QR code WhatsApp de Carinne Leibovici", "Carinne Leibovici's WhatsApp QR code")}" width="152" height="150" style="border-radius:10px;border:1px solid var(--line)">
       <p class="muted" style="max-width:24ch;font-size:.95rem">{t("Scannez ce QR code avec l'appareil photo de votre téléphone pour m'écrire sur WhatsApp.", "Scan this QR code with your phone's camera to message me on WhatsApp.")}</p>
     </div>
-    <p class="note">{t("Je ne réponds pas aux appels de numéros inconnus, mais vous pouvez m'écrire par e-mail ou sur WhatsApp : je vous réponds rapidement.", "I don't answer calls from unknown numbers, but you can write to me by email or on WhatsApp and I will reply quickly.")}</p>
+    <p class="note">{t("Je ne réponds pas aux appels de numéros inconnus, mais vous pouvez m'écrire par e-mail, sur WhatsApp ou via le <a href=\"#formulaire\">formulaire</a> : je vous réponds rapidement.", "I don't answer calls from unknown numbers, but you can write to me by email, on WhatsApp or through the <a href=\"#formulaire\">form</a> and I will reply quickly.")}</p>
     <div class="prose"><p class="muted">{t("Pour faciliter la réponse, indiquez qui consulte (vous, votre couple, votre famille, votre enfant), ce qui vous amène en quelques mots, votre langue (français ou anglais) et vos disponibilités.", "To help me reply, say who the sessions are for (you, your couple, your family, your child), what brings you in a few words, your language (French or English) and when you are available.")}</p></div>
   </div>
   <div class="blocks">
@@ -629,7 +629,42 @@ def build():
     </div>
   </div>
 </div></section>
+<section class="band" id="formulaire"><div class="wrap split">
+  <div class="section-head" style="margin:0">
+    <p class="eyebrow">{t("Formulaire de contact", "Contact form")}</p>
+    <h2>{t("Écrivez-moi directement d'ici", "Write to me from here")}</h2>
+    <p class="muted">{t("Votre message m'arrive par e-mail et je vous réponds personnellement. Inutile d'entrer dans les détails : quelques lignes suffisent.", "Your message reaches me by email and I reply personally. No need to go into detail: a few lines are enough.")}</p>
+  </div>
+  <form class="form" action="https://formsubmit.co/{EMAIL}" method="POST">
+    <input type="hidden" name="_subject" value="{t("Nouveau message depuis le site", "New message from the website")}">
+    <input type="hidden" name="_next" value="{SITE}/{"" if LANG == "fr" else "en/"}merci.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="{t("Langue", "Language")}" value="{t("Français", "English")}">
+    <label for="f-nom">{t("Nom", "Name")}<input id="f-nom" name="{t("Nom", "Name")}" type="text" required autocomplete="name"></label>
+    <label for="f-email">E-mail<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+    <label for="f-pour">{t("Pour qui ?", "Who is it for?")}
+      <select id="f-pour" name="{t("Pour qui", "Who for")}">
+        <option>{t("Pour moi", "For me")}</option><option>{t("Pour notre couple", "For our couple")}</option>
+        <option>{t("Pour notre famille", "For our family")}</option><option>{t("Pour mon enfant", "For my child")}</option>
+        <option>{t("Une simple question", "Just a question")}</option>
+      </select>
+    </label>
+    <label for="f-message">Message<textarea id="f-message" name="Message" rows="6" required></textarea></label>
+    <button class="btn" type="submit">{t("Envoyer le message", "Send message")}</button>
+    <p class="muted" style="font-size:.85rem">{t("Vos informations servent uniquement à vous répondre. Voir la <a href=\"confidentialite.html\">politique de confidentialité</a>.", "Your details are used only to reply to you. See the <a href=\"confidentialite.html\">privacy policy</a>.")}</p>
+  </form>
+</div></section>
 """)
+
+    # ------------------------------------------------------------ Merci
+    page("merci.html",
+         t("Message envoyé · Carinne Leibovici", "Message sent · Carinne Leibovici"),
+         t("Votre message a bien été envoyé.", "Your message has been sent."),
+         f"""
+{head(t("Message envoyé", "Message sent"), t("Merci, votre message est bien parti", "Thank you, your message has been sent"), t("Je vous réponds personnellement, en général sous 24 à 48 heures.", "I will reply personally, usually within 24 to 48 hours."))}
+<section style="padding-top:0"><div class="wrap"><div class="actions"><a class="btn" href="index.html">{t("Retour à l'accueil", "Back to home")}</a><a class="btn ghost" href="faq.html">{t("Questions fréquentes", "FAQ")}</a></div></div></section>
+""", current="contact.html")
 
     # ------------------------------------------------------------ Confidentialité
     privacy = [
@@ -637,7 +672,7 @@ def build():
         (t("Données collectées", "Data collected"), t("Votre identité et vos coordonnées, les informations de santé que vous choisissez de transmettre lors d'une prise de contact ou d'une téléconsultation, et des données de navigation (cookies, adresse IP, utilisation du site).", "Your identity and contact details, health information you choose to share when getting in touch or during an online session, and browsing data (cookies, IP address, site usage).")),
         (t("Finalités", "Purposes"), t("Répondre à vos demandes et à vos prises de rendez-vous, assurer les consultations, améliorer le site et respecter les obligations professionnelles.", "Answering your enquiries and bookings, providing sessions, improving the site and meeting professional obligations.")),
         (t("Données de santé", "Health data"), t("Elles sont strictement confidentielles, sauf obligation légale ou risque grave pour vous ou pour autrui.", "Strictly confidential, except where required by law or in case of serious risk to you or others.")),
-        (t("Partage", "Sharing"), t("Vos données ne sont partagées avec aucun tiers, sauf consentement explicite de votre part, obligation légale ou demande d'une autorité judiciaire ou administrative.", "Your data is not shared with any third party, except with your explicit consent, where required by law, or at the request of a judicial or administrative authority.")),
+        (t("Partage", "Sharing"), t("Vos données ne sont partagées avec aucun tiers, sauf consentement explicite de votre part, obligation légale ou demande d'une autorité judiciaire ou administrative. Les messages envoyés par le formulaire de contact transitent par le service FormSubmit, qui me les transmet par e-mail.", "Your data is not shared with any third party, except with your explicit consent, where required by law, or at the request of a judicial or administrative authority. Messages sent through the contact form pass through the FormSubmit service, which forwards them to me by email.")),
         (t("Durée de conservation", "Retention"), t("Les données de contact sont conservées 2 ans après le dernier échange. Les données de santé sont conservées en général 5 ans après la dernière consultation.", "Contact data is kept for 2 years after our last exchange. Health data is generally kept for 5 years after the last session.")),
         (t("Sécurité", "Security"), t("Des mesures techniques et organisationnelles protègent vos données contre la perte, la modification ou l'accès non autorisé.", "Technical and organisational measures protect your data against loss, alteration or unauthorised access.")),
         (t("Vos droits", "Your rights"), t("Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité, que vous pouvez exercer par e-mail.", "Under the GDPR, you have the right to access, correct, erase, restrict, object to and port your data. You can exercise these rights by email.")),

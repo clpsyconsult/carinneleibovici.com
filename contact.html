@@ -51,7 +51,7 @@
       <img src="assets/whatsapp-qr.png" alt="QR code WhatsApp de Carinne Leibovici" width="152" height="150" style="border-radius:10px;border:1px solid var(--line)">
       <p class="muted" style="max-width:24ch;font-size:.95rem">Scannez ce QR code avec l'appareil photo de votre téléphone pour m'écrire sur WhatsApp.</p>
     </div>
-    <p class="note">Je ne réponds pas aux appels de numéros inconnus, mais vous pouvez m'écrire par e-mail ou sur WhatsApp : je vous réponds rapidement.</p>
+    <p class="note">Je ne réponds pas aux appels de numéros inconnus, mais vous pouvez m'écrire par e-mail, sur WhatsApp ou via le <a href="#formulaire">formulaire</a> : je vous réponds rapidement.</p>
     <div class="prose"><p class="muted">Pour faciliter la réponse, indiquez qui consulte (vous, votre couple, votre famille, votre enfant), ce qui vous amène en quelques mots, votre langue (français ou anglais) et vos disponibilités.</p></div>
   </div>
   <div class="blocks">
@@ -73,6 +73,32 @@
       <p class="muted">Toutes les séances ont lieu en ligne, par vidéo ou par téléphone.</p>
     </div>
   </div>
+</div></section>
+<section class="band" id="formulaire"><div class="wrap split">
+  <div class="section-head" style="margin:0">
+    <p class="eyebrow">Formulaire de contact</p>
+    <h2>Écrivez-moi directement d'ici</h2>
+    <p class="muted">Votre message m'arrive par e-mail et je vous réponds personnellement. Inutile d'entrer dans les détails : quelques lignes suffisent.</p>
+  </div>
+  <form class="form" action="https://formsubmit.co/carinne.leibovici@icloud.com" method="POST">
+    <input type="hidden" name="_subject" value="Nouveau message depuis le site">
+    <input type="hidden" name="_next" value="https://www.carinneleibovici.com/merci.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="Langue" value="Français">
+    <label for="f-nom">Nom<input id="f-nom" name="Nom" type="text" required autocomplete="name"></label>
+    <label for="f-email">E-mail<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+    <label for="f-pour">Pour qui ?
+      <select id="f-pour" name="Pour qui">
+        <option>Pour moi</option><option>Pour notre couple</option>
+        <option>Pour notre famille</option><option>Pour mon enfant</option>
+        <option>Une simple question</option>
+      </select>
+    </label>
+    <label for="f-message">Message<textarea id="f-message" name="Message" rows="6" required></textarea></label>
+    <button class="btn" type="submit">Envoyer le message</button>
+    <p class="muted" style="font-size:.85rem">Vos informations servent uniquement à vous répondre. Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+  </form>
 </div></section>
 
 </main>
